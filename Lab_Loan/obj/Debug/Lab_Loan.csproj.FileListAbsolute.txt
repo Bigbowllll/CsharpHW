@@ -1,0 +1,11 @@
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\bin\Debug\Lab_Loan.exe.config
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\bin\Debug\Lab_Loan.exe
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\bin\Debug\Lab_Loan.pdb
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.csproj.AssemblyReference.cache
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.csproj.SuggestedBindingRedirects.cache
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.Frm_LoanCal_M01.resources
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.Properties.Resources.resources
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.csproj.GenerateResource.cache
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.csproj.CoreCompileInputs.cache
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.exe
+C:\Bigbowl\Csharp\Lab_Csharp\Lab_Loan\obj\Debug\Lab_Loan.pdb
