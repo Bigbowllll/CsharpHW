@@ -145,6 +145,7 @@
             this.btnTotalPaid.TabIndex = 9;
             this.btnTotalPaid.Text = "總付款";
             this.btnTotalPaid.UseVisualStyleBackColor = true;
+            this.btnTotalPaid.Click += new System.EventHandler(this.btnTotalPaid_Click);
             // 
             // btnReport
             // 
@@ -155,6 +156,7 @@
             this.btnReport.TabIndex = 10;
             this.btnReport.Text = "REPORT";
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // Frm_H02_LoanCal
             // 
@@ -175,7 +177,6 @@
             this.Controls.Add(this.labLoanPrice);
             this.Name = "Frm_H02_LoanCal";
             this.Text = "貸款金額計算";
-            this.Load += new System.EventHandler(this.Frm_LoanCal_M01_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

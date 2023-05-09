@@ -46,10 +46,11 @@
             this.txtSearchEnd = new System.Windows.Forms.TextBox();
             this.labSearchChiScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEachSum = new System.Windows.Forms.Button();
             this.labShow = new System.Windows.Forms.Label();
-            this.labTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labSum
@@ -58,7 +59,7 @@
             this.labSum.Font = new System.Drawing.Font("標楷體", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labSum.Location = new System.Drawing.Point(286, 378);
             this.labSum.Name = "labSum";
-            this.labSum.Size = new System.Drawing.Size(494, 114);
+            this.labSum.Size = new System.Drawing.Size(514, 114);
             this.labSum.TabIndex = 32;
             // 
             // btnSearch
@@ -70,6 +71,7 @@
             this.btnSearch.TabIndex = 29;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnCleanData
             // 
@@ -81,6 +83,7 @@
             this.btnCleanData.TabIndex = 27;
             this.btnCleanData.Text = "清除資料";
             this.btnCleanData.UseVisualStyleBackColor = true;
+            this.btnCleanData.Click += new System.EventHandler(this.btnCleanData_Click);
             // 
             // btnInsertData
             // 
@@ -91,6 +94,7 @@
             this.btnInsertData.TabIndex = 26;
             this.btnInsertData.Text = "插入儲存資料";
             this.btnInsertData.UseVisualStyleBackColor = true;
+            this.btnInsertData.Click += new System.EventHandler(this.btnInsertData_Click);
             // 
             // btnAddData
             // 
@@ -177,7 +181,6 @@
             // 
             // btnClearAllData
             // 
-            this.btnClearAllData.Enabled = false;
             this.btnClearAllData.Font = new System.Drawing.Font("微軟正黑體", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnClearAllData.Location = new System.Drawing.Point(73, 352);
             this.btnClearAllData.Name = "btnClearAllData";
@@ -185,6 +188,7 @@
             this.btnClearAllData.TabIndex = 34;
             this.btnClearAllData.Text = "清除所有資料";
             this.btnClearAllData.UseVisualStyleBackColor = true;
+            this.btnClearAllData.Click += new System.EventHandler(this.btnClearAllData_Click);
             // 
             // txtSearchStart
             // 
@@ -222,15 +226,17 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "-";
             // 
-            // button1
+            // btnEachSum
             // 
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(672, 510);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 36);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEachSum.Enabled = false;
+            this.btnEachSum.Font = new System.Drawing.Font("微軟正黑體", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnEachSum.Location = new System.Drawing.Point(692, 510);
+            this.btnEachSum.Name = "btnEachSum";
+            this.btnEachSum.Size = new System.Drawing.Size(108, 36);
+            this.btnEachSum.TabIndex = 39;
+            this.btnEachSum.Text = "各科統計";
+            this.btnEachSum.UseVisualStyleBackColor = true;
+            this.btnEachSum.Click += new System.EventHandler(this.btnEachSum_Click);
             // 
             // labShow
             // 
@@ -242,38 +248,38 @@
             this.labShow.Size = new System.Drawing.Size(2, 17);
             this.labShow.TabIndex = 40;
             // 
-            // labTitle
-            // 
-            this.labTitle.AutoSize = true;
-            this.labTitle.Font = new System.Drawing.Font("標楷體", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labTitle.Location = new System.Drawing.Point(298, 33);
-            this.labTitle.Name = "labTitle";
-            this.labTitle.Size = new System.Drawing.Size(455, 16);
-            this.labTitle.TabIndex = 33;
-            this.labTitle.Text = "姓名      國文   英文   數學   總分   平均   最低   最高";
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(286, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(494, 348);
+            this.panel1.Size = new System.Drawing.Size(514, 348);
             this.panel1.TabIndex = 41;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("標楷體", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(463, 16);
+            this.label1.TabIndex = 42;
+            this.label1.Text = " 姓名     國文   英文   數學   總分   平均   最低    最高";
             // 
             // Frm_H06_StuGradeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 558);
+            this.ClientSize = new System.Drawing.Size(875, 558);
             this.Controls.Add(this.labShow);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEachSum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labSearchChiScore);
             this.Controls.Add(this.txtSearchEnd);
             this.Controls.Add(this.txtSearchStart);
             this.Controls.Add(this.btnClearAllData);
-            this.Controls.Add(this.labTitle);
             this.Controls.Add(this.labSum);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnCleanData);
@@ -290,6 +296,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "Frm_H06_StuGradeList";
             this.Text = "Frm_H06_StuGradeList";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,9 +322,9 @@
         private System.Windows.Forms.TextBox txtSearchEnd;
         private System.Windows.Forms.Label labSearchChiScore;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEachSum;
         private System.Windows.Forms.Label labShow;
-        private System.Windows.Forms.Label labTitle;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

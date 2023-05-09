@@ -17,46 +17,22 @@ namespace Lab_Form
             InitializeComponent();
         }
 
-        int guess, count, min, max;
-        private void Guess()
+        public string LabelText
         {
-            Random r = new Random();
-            guess = r.Next(1, 100);            
-            max = 0; 
-            min=0;
-            count = 0;
-
+            get { return labName.Text; }
+            set { labName.Text = value; }
         }
 
         private void btnGuess_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show("Please input a number.","Guess",MessageBoxButtons.OK);
-            count += 1;
-            int myguess = 0;
-            if(myguess>=1&&myguess<100)
-            {
-             if(myguess==guess)
-                {
-                    MessageBox.Show("Bingo");
-                }
-             else if(myguess>guess)
-                {
-                    max = myguess;
-                }
-             else if(myguess<guess)
-                {
-                    min = myguess;
-                }
-                else
-                {
-                    //輸入提示範圍內的數字
-                }
-             
-             //提示數字:$"{min}<?<{max}";
-            }
+            frm_inputbox frm = new frm_inputbox(this);
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.ShowDialog();
         }
 
-    
+        private void btnAns_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Answer:"+ GuessNum.guess);
+        }
     }
 }

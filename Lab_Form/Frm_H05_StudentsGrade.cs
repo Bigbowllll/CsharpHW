@@ -24,7 +24,9 @@ namespace Lab_Form
             labShow.Parent = panel1;            
         }
         private int stunum = 0;
-        
+        private List<int> ChineseScores = new List<int>();
+        private List<int> EngScores = new List<int>();
+        private List<int> MathScores = new List<int>();
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -33,7 +35,7 @@ namespace Lab_Form
             btnRandomSave.Enabled = true;
             labShow.Text = string.Empty;
             labSum.Text = string.Empty;
-            num = 0;
+            num = 0;         
             stunum = 0;
             ChineseScore = 0;
             EngScore = 0;
@@ -44,6 +46,20 @@ namespace Lab_Form
             ChineseAvg = 0;
             EngAvg = 0; 
             MathAvg = 0;
+            chineseTotal = chineseScoreTotal = 0;
+            engTotal = engScoreTotal = 0;
+            mathTotal =mathScoreTotal= 0;
+            chineseScore = 0;
+            engScore = 0;
+            mathScore = 0;
+            chineseAvg = 0;
+            engAvg = 0;
+            mathAvg = 0;
+            ChineseScores.Clear();
+            EngScores.Clear();
+            MathScores.Clear();
+
+
         }
 
         string NameShow;
@@ -52,32 +68,56 @@ namespace Lab_Form
         private void btnRandomSave_Click(object sender, EventArgs e) //隨機儲存資料
         {            
             btnEachSum.Enabled = true;
-            RdmScore();           
+            RdmScore();
+            ChineseScores.Add(chineseScore);
+            EngScores.Add(engScore);
+            MathScores.Add(mathScore);
+            labShow.Text += $"{stunum,-10} {chineseScore,-5} {engScore,-5} {mathScore,-5} {totalScore,-7}{average.ToString("F1"),-7}" +
+                         $"{minSubject}{minScore,-5}{maxSubject}{maxScore}\n";
         }
 
-        
 
-        int ChineseScore = 0, EngScore = 0, MathScore = 0;
-        int ChineseTotal, EngTotal, MathTotal = 0;
-        double ChineseAvg, EngAvg, MathAvg = 0;
+
+        int ChineseScore;
+        int EngScore;
+        int MathScore;
+        int ChineseTotal;
+        int EngTotal;
+        int MathTotal;
+        double ChineseAvg;
+        double EngAvg;
+        double MathAvg;
 
         private void btnRandomAdd_Click(object sender, EventArgs e)
         {
-         TwRdmScore();
+            btnEachSum.Enabled = true;
+            TwRdmScore();
+            ChineseScores.Add(chineseScore);
+            EngScores.Add(engScore);
+            MathScores.Add(mathScore);
         }
 
-        int chineseScore = 0;
-        int engScore = 0;
-        int mathScore = 0;
-        int totalScore = 0;
-        double average = 0;
+        int chineseScore;
+        int engScore;
+        int mathScore;
+        int totalScore;
+        double average;
 
-        int MaxChineseScore = 0;
-        int MaxEngScore = 0;
-        int MaxMathScore = 0;
-        int MinChineseScore = 0;
-        int MinEngScore = 0;
-        int MinMathScore = 0;
+        int maxChineseScore=0;
+        int maxEngScore=0;
+        int maxMathScore = 0;
+        int minChineseScore = 100;
+        int minEngScore = 100;
+        int minMathScore = 100;
+
+        private int chineseScoreTotal = 0;
+        private int engScoreTotal = 0;
+        private int mathScoreTotal = 0;
+        int chinsrc;
+        int engsrc;
+        int mathsrc;
+
+        
 
         void TwRdmScore()
         {
@@ -86,15 +126,21 @@ namespace Lab_Form
             for (int i = 0; i < 20; i++)
             {
                 stunum++;
-                int chineseScore = rand.Next(0, 100);
-                int engScore = rand.Next(0, 100);
-                int mathScore = rand.Next(0, 100);
-                int totalScore = chineseScore + engScore + mathScore;
-                double average = totalScore / 3.0;
-                string minSubject = "";
-                int minScore = int.MaxValue;
-                string maxSubject = "";
-                int maxScore = int.MinValue;
+                chineseScore = rand.Next(0, 100);
+                engScore = rand.Next(0, 100);
+                mathScore = rand.Next(0, 100);
+                totalScore = chineseScore + engScore + mathScore;
+                average = totalScore / 3.0;
+                 minSubject = "";
+                 minScore = int.MaxValue;
+                 maxSubject = "";
+                 maxScore = int.MinValue;
+                chineseScoreTotal += chineseScore;
+                engScoreTotal += engScore;
+                mathScoreTotal += mathScore;
+                chinsrc = chineseScore;
+                engsrc =engScore;
+                mathsrc = mathScore;
 
                 if (chineseScore < minScore)
                 {
@@ -135,17 +181,23 @@ namespace Lab_Form
         {
             Random rand = new Random();
             stunum++;
-            int chineseScore = rand.Next(0, 100);
-            int engScore = rand.Next(0, 100);
-            int mathScore = rand.Next(0, 100);
-            int totalScore = chineseScore + engScore + mathScore;
-            double average = totalScore / 3.0;
-            string minSubject = "";
-            int minScore = int.MaxValue;
-            string maxSubject = "";
-            int maxScore = int.MinValue;
-           
-           
+             chineseScore = rand.Next(0, 100);
+             engScore = rand.Next(0, 100);
+             mathScore = rand.Next(0, 100);
+             totalScore = chineseScore + engScore + mathScore;
+             average = totalScore / 3.0;
+             minSubject = "";
+            minScore = int.MaxValue;
+             maxSubject = "";
+             maxScore = int.MinValue;
+            chineseScoreTotal += chineseScore;
+            engScoreTotal += engScore;
+            mathScoreTotal += mathScore;
+            chinsrc = chineseScore;
+            engsrc = engScore;
+            mathsrc = mathScore;
+
+
             if (chineseScore < minScore)
             {
                 minSubject = "國文";
@@ -176,12 +228,15 @@ namespace Lab_Form
                 maxSubject = "數學";
                 maxScore = mathScore;
             }
-            
-
-            labShow.Text += $"{stunum,-10} {chineseScore,-5} {engScore,-5} {mathScore,-5} {totalScore,-7}{average.ToString("F1"),-7}" +
-                            $"{minSubject}{minScore,-5}{maxSubject}{maxScore}\n";
-          
+           
         }
+     
+        int chineseTotal;
+        int engTotal;
+        int mathTotal;
+        double chineseAvg;
+        double engAvg;
+        double mathAvg;
 
         private void btnEachSum_Click(object sender, EventArgs e)   //各科統計
         {
@@ -189,19 +244,31 @@ namespace Lab_Form
             btnRandomAdd.Enabled = false;
             btnRandomSave.Enabled = false;
             btnEachSum.Enabled = false;
-            
-                        
-            ChineseAvg = ChineseTotal / stunum;
-            EngAvg = EngTotal / stunum;
-            MathAvg = MathTotal / stunum;
+            chineseTotal = chineseScoreTotal;
+            engTotal =  engScoreTotal;
+            mathTotal = mathScoreTotal;
+            chineseAvg = (double)chineseTotal / (stunum);
+            engAvg = (double)engTotal / (stunum);
+            mathAvg = (double)mathTotal / (stunum);
+
+            maxChineseScore = ChineseScores.Max();
+            maxEngScore = EngScores.Max();
+           maxMathScore = MathScores.Max();
+           minChineseScore = ChineseScores.Min();
+            minEngScore = EngScores.Min();
+            minMathScore = MathScores.Min();
 
 
-            labSum.Text = $"{"總分",-10} {ChineseTotal,-5} {EngTotal,-5}{MathTotal,-5}\n" +
-                $"{"平均",-10} {ChineseAvg,-5} {EngAvg,-5}{MathAvg,-5}\n" +
-                $"{"最高分",-9} {MaxChineseScore,-5} {MaxEngScore,-5}{MaxMathScore,-5}\n" +
-                $"{"最高分",-9} {MinChineseScore,-5} {MinEngScore,-5}{MinMathScore,-5}";
+            labSum.Text = $"{"總分",-10} {chineseTotal,-5} {engTotal,-5}{mathTotal,-5}\n" +
+                $"{"平均",-10} {chineseAvg.ToString("F1"),-5} {engAvg.ToString("F1"),-5}{mathAvg.ToString("F1"),-5}\n" +
+                $"{"最高分",-9} {maxChineseScore,-5} {maxEngScore,-5}{maxMathScore,-5}\n" +
+                $"{"最低分",-9} {minChineseScore,-5} {minEngScore,-5}{minMathScore,-5}";
 
         }
+
+
+       
+
        int score = 0;
 
         private void btnAddData_Click(object sender, EventArgs e)
@@ -236,33 +303,57 @@ namespace Lab_Form
             else
             {
                 ScoreAll(score);
+                labShow.Text += $"{NameShow,-10} {ChineseScore,-5} {EngScore,-5} {MathScore,-5} {TotalScore,-7}{Average.ToString("F1"),-7}" +
+                  $"{minSubject}{minScore,-5}{maxSubject}{maxScore}\n";
             }
             btnEachSum.Enabled = true; 
         }
 
         string ScoreLine;
+        int TotalScore;
+        double Average;
+        int MaxChineseScore;
+        int MaxEngScore;
+        int MaxMathScore;
+        int MinChineseScore;
+        int MinEngScore;
+        int MinMathScore;
+        int maxScore;
+        int minScore;
+        string maxSubject;
+        string minSubject;
+
         void ScoreAll(int score)
         {   
             NameShow = txtName.Text;
             ChineseScore = int.Parse(txtChinese.Text);
             EngScore = int.Parse(txtEnglish.Text);
             MathScore = int.Parse(txtMath.Text);
-            int TotalScore = ChineseScore + EngScore + MathScore;
-            double Average = TotalScore / 3.0;
+            TotalScore = ChineseScore + EngScore + MathScore;
+            Average = TotalScore / 3.0;
 
-            int MaxChineseScore = ChineseScore;
-            int MaxEngScore = EngScore;
-            int MaxMathScore = MathScore;
-            int MinChineseScore = ChineseScore;
-            int MinEngScore = EngScore;
-            int MinMathScore = MathScore;
+            chineseScoreTotal += ChineseScore;
+            engScoreTotal += EngScore;
+            mathScoreTotal += MathScore;
+
+             MaxChineseScore = ChineseScore;
+             MaxEngScore = EngScore;
+             MaxMathScore = MathScore;
+             MinChineseScore = ChineseScore;
+             MinEngScore = EngScore;
+             MinMathScore = MathScore;
+
+            ChineseScores.Add(ChineseScore);
+            EngScores.Add(EngScore);
+            MathScores.Add(MathScore);
+
 
 
             int[] Score = new int[] { ChineseScore, EngScore, MathScore };
-            int maxScore = Score[0];
-            int minScore = Score[0];
-            string maxSubject = GetSubject(ChineseScore);
-            string minSubject = GetSubject(ChineseScore);
+             maxScore = Score[0];
+             minScore = Score[0];
+             maxSubject = GetSubject(ChineseScore);
+             minSubject = GetSubject(ChineseScore);
             stunum++;
             for (int i = 0; i < Score.Length; i++)
             {
@@ -297,8 +388,7 @@ namespace Lab_Form
 
             }
 
-            labShow.Text += $"{NameShow,-10} {ChineseScore,-5} {EngScore,-5} {MathScore,-5} {TotalScore,-7}{Average.ToString("F1"),-7}" +
-                $"{minSubject}{minScore,-5}{maxSubject}{maxScore}\n";
+ 
 
             string GetSubject(int scoree)
             {
@@ -318,6 +408,5 @@ namespace Lab_Form
 
 
         }
-
     }
 }

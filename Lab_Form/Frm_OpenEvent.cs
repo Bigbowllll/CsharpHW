@@ -37,7 +37,7 @@ namespace Lab_Form
           frm.StartPosition = FormStartPosition.CenterParent; 
           frm.TopLevel = false;
           splitContainer2.Panel2.Controls.Add(frm);
-          OpenFormInPanel(frm);                
+          OpenFormInPanel(frm); 
          
         }
 
@@ -118,7 +118,10 @@ namespace Lab_Form
         private void btnGuessNum_Click(object sender, EventArgs e)
         {
             Frm_H15_GuessNum frm = new Frm_H15_GuessNum();
-            frm.Show();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            frm.TopLevel = false;
+            splitContainer2.Panel2.Controls.Add(frm);
+            OpenFormInPanel(frm);
         }
                
        

@@ -70,7 +70,5 @@ namespace Lab_Form
             }
             lastMousePosition = currentMousePosition;
         }
-
-
     }
 }

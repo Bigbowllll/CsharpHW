@@ -25,3 +25,6 @@ C:\Bigbowl\Csharp\Hw_Csharp\Lab_Form\bin\Debug\tt\Lab_Form.resources.dll
 C:\Bigbowl\Csharp\Hw_Csharp\Lab_Form\obj\Debug\Lab_Form.Frm_H12_Notepad.tt.resources
 C:\Bigbowl\Csharp\Hw_Csharp\Lab_Form\obj\Debug\tt\Lab_Form.resources.dll
 C:\Bigbowl\Csharp\Hw_Csharp\Lab_Form\obj\Debug\Lab_Form.Frm_H11_ScreenSaver.resources
+C:\Bigbowl\Csharp\Hw_Csharp\Lab_Form\obj\Debug\Lab_Form.Frm_H09_ForDoWhile.resources
+C:\Bigbowl\Csharp\Hw_Csharp\Lab_Form\obj\Debug\Lab_Form.frm_inputbox.resources
+C:\Bigbowl\Csharp\Hw_Csharp\Lab_Form\obj\Debug\Lab_Form.frm_LoanReport.resources

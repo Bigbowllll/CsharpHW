@@ -36,13 +36,15 @@
             this.btnOpenHelloForm = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnScreenSaver = new System.Windows.Forms.Button();
             this.btnGuessNum = new System.Windows.Forms.Button();
             this.btnNotepad = new System.Windows.Forms.Button();
             this.btnMethod = new System.Windows.Forms.Button();
             this.btnStuGradeList = new System.Windows.Forms.Button();
             this.btnStuGrade = new System.Windows.Forms.Button();
-            this.btnScreenSaver = new System.Windows.Forms.Button();
+            this.labName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -126,6 +128,7 @@
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.Window;
             this.splitContainer1.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel1.BackgroundImage")));
+            this.splitContainer1.Panel1.Controls.Add(this.labName);
             // 
             // splitContainer1.Panel2
             // 
@@ -142,7 +145,7 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.RosyBrown;
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer2.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer2.Panel1.BackgroundImage")));
             this.splitContainer2.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer2.Panel1.Controls.Add(this.btnScreenSaver);
@@ -164,6 +167,19 @@
             this.splitContainer2.Size = new System.Drawing.Size(1769, 1134);
             this.splitContainer2.SplitterDistance = 329;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // btnScreenSaver
+            // 
+            this.btnScreenSaver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnScreenSaver.Font = new System.Drawing.Font("微軟正黑體", 8.150944F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnScreenSaver.Location = new System.Drawing.Point(59, 343);
+            this.btnScreenSaver.Name = "btnScreenSaver";
+            this.btnScreenSaver.Size = new System.Drawing.Size(210, 32);
+            this.btnScreenSaver.TabIndex = 10;
+            this.btnScreenSaver.Text = "11 ScreenSaver";
+            this.btnScreenSaver.UseVisualStyleBackColor = true;
+            this.btnScreenSaver.Click += new System.EventHandler(this.btnScreenSaver_Click);
             // 
             // btnGuessNum
             // 
@@ -213,7 +229,7 @@
             this.btnStuGradeList.Name = "btnStuGradeList";
             this.btnStuGradeList.Size = new System.Drawing.Size(210, 32);
             this.btnStuGradeList.TabIndex = 6;
-            this.btnStuGradeList.Text = "None\r\n06 Students Grade List";
+            this.btnStuGradeList.Text = "06 Students Grade List";
             this.btnStuGradeList.UseVisualStyleBackColor = true;
             this.btnStuGradeList.Click += new System.EventHandler(this.btnStuGradeList_Click);
             // 
@@ -230,18 +246,15 @@
             this.btnStuGrade.UseVisualStyleBackColor = true;
             this.btnStuGrade.Click += new System.EventHandler(this.btnStuGrade_Click);
             // 
-            // btnScreenSaver
+            // labName
             // 
-            this.btnScreenSaver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnScreenSaver.Font = new System.Drawing.Font("微軟正黑體", 8.150944F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnScreenSaver.Location = new System.Drawing.Point(59, 343);
-            this.btnScreenSaver.Name = "btnScreenSaver";
-            this.btnScreenSaver.Size = new System.Drawing.Size(210, 32);
-            this.btnScreenSaver.TabIndex = 10;
-            this.btnScreenSaver.Text = "11 ScreenSaver";
-            this.btnScreenSaver.UseVisualStyleBackColor = true;
-            this.btnScreenSaver.Click += new System.EventHandler(this.btnScreenSaver_Click);
+            this.labName.AutoSize = true;
+            this.labName.Font = new System.Drawing.Font("微軟正黑體", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labName.Location = new System.Drawing.Point(71, 25);
+            this.labName.Name = "labName";
+            this.labName.Size = new System.Drawing.Size(120, 37);
+            this.labName.TabIndex = 0;
+            this.labName.Text = "C# 作業";
             // 
             // Frm_OpenEvent
             // 
@@ -252,6 +265,8 @@
             this.Name = "Frm_OpenEvent";
             this.Text = "Frm_OpenEvent";
             this.Load += new System.EventHandler(this.Frm_OpenEvent_Load);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -277,5 +292,6 @@
         private System.Windows.Forms.Button btnNotepad;
         private System.Windows.Forms.Button btnGuessNum;
         private System.Windows.Forms.Button btnScreenSaver;
+        private System.Windows.Forms.Label labName;
     }
 }

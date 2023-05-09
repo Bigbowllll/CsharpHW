@@ -90,6 +90,17 @@ namespace Lab_Form
         public int minScore;
     }
 
-    
+    public class GuessNum
+    {
+        public int Answer;
+        public static int guess;
+    }
+
+
+    public class Loan
+    {
+        public static double loanPrice, labRate, monPaid, firstPrice,totalPaid;
+        public static int labYear;
+    }
 
 }

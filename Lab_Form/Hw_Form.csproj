@@ -100,6 +100,12 @@
     <Compile Include="Frm_H08_MyClac.Designer.cs">
       <DependentUpon>Frm_H08_MyClac.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_H09_ForDoWhile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_H09_ForDoWhile.Designer.cs">
+      <DependentUpon>Frm_H09_ForDoWhile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_H11_ScreenSaver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     <Compile Include="Frm_H15_GuessNum.Designer.cs">
       <DependentUpon>Frm_H15_GuessNum.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_LoanReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_LoanReport.Designer.cs">
+      <DependentUpon>frm_LoanReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_OpenEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,11 +142,11 @@
     <Compile Include="Frm_OpenEvents.Designer.cs">
       <DependentUpon>Frm_OpenEvents.cs</DependentUpon>
     </Compile>
-    <Compile Include="inputbox.cs">
+    <Compile Include="frm_inputbox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inputbox.Designer.cs">
-      <DependentUpon>inputbox.cs</DependentUpon>
+    <Compile Include="frm_inputbox.Designer.cs">
+      <DependentUpon>frm_inputbox.cs</DependentUpon>
     </Compile>
     <Compile Include="Partial Class.cs" />
     <Compile Include="Program.cs" />
@@ -167,6 +179,9 @@
     <EmbeddedResource Include="Frm_H08_MyClac.resx">
       <DependentUpon>Frm_H08_MyClac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_H09_ForDoWhile.resx">
+      <DependentUpon>Frm_H09_ForDoWhile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_H11_ScreenSaver.resx">
       <DependentUpon>Frm_H11_ScreenSaver.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,11 +194,17 @@
     <EmbeddedResource Include="Frm_H15_GuessNum.resx">
       <DependentUpon>Frm_H15_GuessNum.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_LoanReport.resx">
+      <DependentUpon>frm_LoanReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpenEvent.resx">
       <DependentUpon>Frm_OpenEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_OpenEvents.resx">
       <DependentUpon>Frm_OpenEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_inputbox.resx">
+      <DependentUpon>frm_inputbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
